@@ -1,28 +1,13 @@
 ---
-- name:  Ansible Playbook
+- name: test
   hosts: localhost
-  become: yes
 
   tasks:
-    - name: Ensure a package is installed
-      apt:
-        name: git
-        state: present
-      when: ansible_os_family == "Debian"
+    - name: pinging
+      ping:
 
-    - name: Create a directory
-      file:
-        path: /tmp/sample_directory
-        state: directory
-
-    - name: Copy a file
-      copy:
-        src: /path/to/source/file.txt
-        dest: /tmp/sample_directory/file.txt
-
-    - name: Start a service
-      service:
-        name: apache2
-        state: started
-      when: ansible_os_family == "Debian"
+    - name: create file
+      ansible.builtin.file:
+        path: /home/ubuntu/nhvhvh/xdc.txt
+        state: touch
 
