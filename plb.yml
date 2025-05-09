@@ -1,6 +1,6 @@
 ---
 - name: test
-  hosts: localhost
+  hosts: all
 
   tasks:
     - name: pinging
